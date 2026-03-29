@@ -1,0 +1,105 @@
+/* ── Tailwind CSS directives (required) ── */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Base styles ── */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-navy-900 text-slate-200 font-sans;
+    /* Subtle scan-line texture overlay */
+    background-image: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 200, 255, 0.012) 2px,
+      rgba(0, 200, 255, 0.012) 4px
+    );
+  }
+
+  /* Custom scrollbar — thin cyan accent */
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #050d1a;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #1e6fff;
+    border-radius: 2px;
+  }
+}
+
+/* ── Reusable utility classes ── */
+@layer components {
+  /* Section label above each heading */
+  .section-label {
+    @apply flex items-center gap-3 font-mono text-xs tracking-widest uppercase text-cyan-400 mb-3;
+  }
+  .section-label::before {
+    content: '';
+    @apply block w-8 h-px bg-cyan-400;
+  }
+
+  /* Card base style */
+  .card {
+    @apply bg-navy-700 border border-navy-500 rounded-xl p-6
+           transition-all duration-300
+           hover:-translate-y-1 hover:border-cyan-400/40
+           hover:shadow-[0_20px_40px_rgba(0,0,0,0.5),0_0_20px_rgba(0,200,255,0.15)];
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Card top accent line on hover */
+  .card::before {
+    content: '';
+    @apply absolute top-0 left-0 right-0 h-0.5;
+    background: linear-gradient(90deg, transparent, #00c8ff, transparent);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .card:hover::before {
+    opacity: 1;
+  }
+
+  /* Badge / chip */
+  .badge {
+    @apply inline-block font-mono text-xs px-2.5 py-1 rounded border;
+  }
+  .badge-blue {
+    @apply badge border-blue-500/50 text-blue-400 bg-blue-500/10;
+  }
+  .badge-cyan {
+    @apply badge border-cyan-400/50 text-cyan-400 bg-cyan-400/10;
+  }
+  .badge-gold {
+    @apply badge border-yellow-400/50 text-yellow-400 bg-yellow-400/10;
+  }
+  .badge-green {
+    @apply badge border-green-400/50 text-green-400 bg-green-400/10;
+  }
+
+  /* Primary button */
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-5 py-2.5 rounded-lg
+           font-mono text-sm tracking-wide cursor-pointer
+           bg-blue-500 text-white border border-blue-500
+           transition-all duration-300
+           hover:bg-transparent hover:text-blue-400
+           hover:shadow-[0_0_20px_rgba(30,111,255,0.4)];
+  }
+
+  /* Ghost / outline button */
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 px-5 py-2.5 rounded-lg
+           font-mono text-sm tracking-wide cursor-pointer
+           bg-transparent text-cyan-400 border border-navy-500
+           transition-all duration-300
+           hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(0,200,255,0.3)];
+  }
+}
