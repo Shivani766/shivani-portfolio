@@ -16,7 +16,7 @@ import React from 'react'
 // Personal info displayed in the card on the right
 const PERSONAL_INFO = [
   { label: 'Full Name',  value: 'Shivani Diwakar' },
-  { label: 'Role',       value: 'MERN Stack Developer and software engineer' },
+  { label: 'Role',       value: 'full Stack Developer and software engineer' },
   { label: 'Email',      value: 'shivanidiwakar1122@gmail.com', isLink: true, href: 'mailto:shivanidiwakar1122@gmail.com' },
   { label: 'Location',   value: 'India' },
   { label: 'GitHub',     value: 'github.com/shivani', isLink: true, href: 'https://github.com/Shivani766' },
@@ -129,7 +129,7 @@ function About() {
                   Shivani Diwakar
                 </div>
                 <div className="font-mono text-xs text-cyan-400 mt-0.5">
-                  MERN Stack Developer
+                   software Developer
                 </div>
               </div>
               {/* Availability dot */}

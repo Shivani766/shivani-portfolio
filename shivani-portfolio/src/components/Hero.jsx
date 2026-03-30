@@ -40,7 +40,7 @@ function Hero() {
           <div>
             {/* Small label above name */}
             <p className="section-label animate-fade-up">
-              MERN Stack Developer
+              software Engineer || full stack developer
             </p>
 
             {/* Main heading — name */}

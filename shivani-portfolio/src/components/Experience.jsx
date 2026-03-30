@@ -22,7 +22,7 @@ const EXPERIENCES = [
 
   {
     type: 'work',
-    role: 'Frontend Developer',
+    role: 'software Developer',
     company: 'Personal Projects & Freelance',
     period: '2023 – 2024',
     description:
